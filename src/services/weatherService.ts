@@ -31,4 +31,5 @@ export const generateDublinWeatherData = (): WeatherData => {
 
   // Return weather data
   return generatedWeatherData;
+
 };

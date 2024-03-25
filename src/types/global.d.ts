@@ -5,4 +5,9 @@ interface WeatherData {
   wind: number;
   rain: number;
 }
-
+interface BurgerData {
+  name: string;
+  patties: number;
+  toppings: string[];
+  sauces: string[];
+}

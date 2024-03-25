@@ -5,6 +5,7 @@ import {
 } from "../services/weatherService.js";
 import { validationResult } from "express-validator";
 
+
 /**
  * Gets the weather data for a city
  * @param req the request object

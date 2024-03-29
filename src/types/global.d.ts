@@ -1,13 +1,7 @@
-interface WeatherData {
-  city: string;
-  temperature: number;
-  humidity: number;
-  wind: number;
-  rain: number;
-}
-interface BurgerData {
+interface RestaurantData {
   name: string;
-  patties: number;
-  toppings: string[];
-  sauces: string[];
+  address: string;
+  cuisine: string;
+  rating: number;
+  isOpen: boolean;
 }

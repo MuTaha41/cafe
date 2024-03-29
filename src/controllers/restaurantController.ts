@@ -1,6 +1,9 @@
 import { Request, Response } from "express";
 import { validationResult } from "express-validator";
+import { RestaurantData } from '../types/global';
 import { getRestaurantsByCuisine, getRestaurantById } from "../services/restaurantService.js";
+
+
 export const getRestaurantData = async (req: Request, res: Response) => {
   const errors = validationResult(req);
 

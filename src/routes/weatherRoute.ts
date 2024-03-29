@@ -12,3 +12,4 @@ router.get("/:restaurantParam", validateRestaurantParam, getRestaurantData); // 
 
 // Export the router
 export default router;
+

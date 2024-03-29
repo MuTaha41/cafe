@@ -1,14 +1,12 @@
 import express from "express";
-import { getWeatherData } from "../controllers/weatherController.js";
-import { validateCityName } from "../middleware/validators.js";
+import { getRestaurantData } from "../controllers/restaurantController"; // Updated import
+import { validateRestaurantParam } from "../middleware/validators"; // Updated import
 
-
-
-// We will create a router object
+// Create a router object
 const router = express.Router();
 
-// We will create a route for the weather data based on the city name
-router.get("/:city", validateCityName, getWeatherData);
+// Create a route for restaurant data, the parameter can be an ID, name, etc.
+router.get("/:restaurantParam", validateRestaurantParam, getRestaurantData); // Updated route
 
-// We will export the router
+// Export the router
 export default router;

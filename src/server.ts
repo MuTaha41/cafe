@@ -1,18 +1,18 @@
 import express from "express";
-import weatherRoute from "./routes/weatherRoute.js";
+import restaurantRoute from "./routes/restaurantRoute"; // Renamed import
 import cors from "cors";
 
-// We will create an express app
+// Create an express app
 const app = express();
 
 // The port that the express server will listen on
 const PORT = 3000;
 
-
 app.use(express.json());
 app.use(cors());
-// We define our first route
-app.use("/api/weather", weatherRoute);
+
+// Define the route for restaurant data
+app.use("/api/restaurants", restaurantRoute); // Updated route
 
 // Start the express server
 app.listen(PORT, () => {

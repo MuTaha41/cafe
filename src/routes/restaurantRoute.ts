@@ -4,12 +4,9 @@ import express from 'express';
 import { generateRandomRestaurantData } from '../services/restaurantService.js';
 
 const router = express.Router();
-
 router.get('/randomRestaurant', (_req, res) => {
   const data = generateRandomRestaurantData();
   res.json(data);
 });
 
 export default router;
-
-

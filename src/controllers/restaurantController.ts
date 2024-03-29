@@ -1,6 +1,9 @@
 import { Request, Response } from "express";
 import { validationResult } from "express-validator";
-import { RestaurantData } from '../types/global';
+import { RestaurantData } from '../types/global.js';
+// If validateRestaurantName is what you meant
+//import { validateRestaurantName } from "../middleware/validators.js";
+
 import { getRestaurantsByCuisine, getRestaurantById } from "../services/restaurantService.js";
 
 

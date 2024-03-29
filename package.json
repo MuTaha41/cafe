@@ -1,13 +1,14 @@
 {
-  "name": "weather_api",
+  "name": "coursework_api",
   "version": "1.0.0",
-  "description": "The Weather API",
+
+  "description": "COURSEWORK API",
   "type": "module",
   "engines": {
     "node": ">= 18.12 <21"
   },
   "license": "MIT",
-  "author": "Lucian Duta",
+  "author": "Basiru Kassama",
   "scripts": {
     "start": "node dist/src/server.js",
     "dev": "nodemon dist/src/server.js",

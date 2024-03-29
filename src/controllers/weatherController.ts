@@ -1,50 +1,35 @@
 import { Request, Response } from "express";
-import {
-  generateDublinWeatherData,
-  generateLondonWeatherData,
-} from "../services/weatherService.js";
 import { validationResult } from "express-validator";
+import { getRestaurantsByCuisine, getRestaurantById } from "../services/restaurantService"; // These functions need to be implemented
 
-/**
- * Gets the weather data for a city
- * @param req the request object
- * @param res the response object
- */
-export const getWeatherData = async (req: Request, res: Response) => {
-  // We will use the validationResult function to check if there are any validation errors
+export const getRestaurantData = async (req: Request, res: Response) => {
   const errors = validationResult(req);
 
-  // If there are validation errors, we will log them and send a 400 status code
   if (!errors.isEmpty()) {
     console.error("Validation error", errors.mapped());
     res.status(400).json({ errors: errors.array() });
     return;
   }
 
-  // We will use a try catch block to catch any errors
   try {
-    // Get the city param from the request
-    const { city } = req.params;
-    console.log(city);
+    // This could be a cuisine type, a restaurant ID, or any other parameter relevant for fetching restaurant data
+    const { param } = req.params;
 
-    // We will create a variable with a type of WeatherData
-    let finalWeatherData: WeatherData;
+    let finalRestaurantData: RestaurantData; // Ensure RestaurantData is defined and imported
 
-    // We will use an if statement to check which city was passed in
-    if (city === "london") {
-      console.log(generateLondonWeatherData());
-      finalWeatherData = generateLondonWeatherData();
-    } else if (city === "dublin") {
-      finalWeatherData = generateDublinWeatherData();
+    // Example logic to fetch restaurant data based on the parameter
+    if (param) {
+      // The logic here will depend on how your restaurant data is structured and how you want to fetch it
+      // If 'param' represents a cuisine, fetch by cuisine
+      finalRestaurantData = await getRestaurantsByCuisine(param);
     } else {
-      // If the city is not london or dublin, we will throw an error
-      res.status(404).send("City not found");
+      // If 'param' represents an ID, fetch a specific restaurant
+      finalRestaurantData = await getRestaurantById(param);
     }
 
-    // We will return the weather data as JSON
-    res.status(200).json(finalWeatherData);
+    res.status(200).json(finalRestaurantData);
   } catch (error) {
-    // If there is an error, we will log it and send a 500 status code
-    res.status(500).send("Error in fetching weather data");
+    console.error("Error in fetching restaurant data", error);
+    res.status(500).send("Error in fetching restaurant data");
   }
 };

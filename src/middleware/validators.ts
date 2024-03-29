@@ -1,19 +1,34 @@
 import { param } from "express-validator";
 
 /**
- * Validates the city name param
+ * Validates the restaurant ID param
  * @returns {ValidationChain} - Express validator validation chain
  * @example
  * router.get(
- *  "/:city",
- * validateCityName,
- * getWeatherData
+ *  "/:restaurantId",
+ * validateRestaurantId,
+ * getRestaurantData
  * );
  */
-export const validateCityName = param("city")
-  // We will use the isString method to check if the city param is a string
+export const validateRestaurantId = param("restaurantId")
+  .isNumeric()
+  .withMessage("Restaurant ID must be a numeric value");
+
+  export const validateRestaurantName = param("restaurantName")
   .isString()
-  // We will use the isIn method to check if the city param is either london or dublin
-  .isIn(["london", "dublin"])
-  // We will use the withMessage method to set a custom error message
-  .withMessage("City name must be either london or dublin");
+  .trim() // Optional: removes any whitespace around the string
+  .not().isEmpty()
+  .withMessage("Restaurant name must be provided and cannot be empty");
+
+  router.get(
+    "/:restaurantId",
+    validateRestaurantId,
+    getRestaurantData
+  );
+
+  router.get(
+    "/:restaurantName",
+    validateRestaurantName,
+    getRestaurantData
+  );
+  

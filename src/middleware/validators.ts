@@ -36,7 +36,7 @@
 import { Router } from 'express';
 import { param } from 'express-validator';
 // Assuming getRestaurantData is in the same directory
-import { getRestaurantData } from './restaurantController'; 
+import { getRestaurantData } from './restaurantController.js'; 
 
 // Create a new router instance
 const router = Router();

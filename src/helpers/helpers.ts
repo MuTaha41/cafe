@@ -3,6 +3,7 @@ import { getClient, getAccount } from "../config/config.js";
 //import { RestaurantData } from "../types/global"; // Import the RestaurantData type
 import { RestaurantData } from "../types/global.js";
 
+
 export const storeRestaurantData = async (data: RestaurantData): Promise<void> => {
     try {
         const client = getClient();

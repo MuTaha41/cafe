@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import { validationResult } from "express-validator";
-import { getRestaurantsByCuisine, getRestaurantById } from "../services/restaurantService"; // These functions need to be implemented
-
+//import { getRestaurantsByCuisine, getRestaurantById } from "../services/restaurantService"; // These functions need to be implemented
+import { getRestaurantsByCuisine, getRestaurantById } from "../services/restaurantService.js";
 export const getRestaurantData = async (req: Request, res: Response) => {
   const errors = validationResult(req);
 

@@ -20,7 +20,8 @@
 // });
 
 import express from 'express';
-import restaurantRouter from './routes/restaurantRoute'; // Assuming this file is named restaurantRoute.js
+import restaurantRouter from './routes/restaurantRoute.js';
+//import restaurantRouter from './routes/restaurantRoute'; // Assuming this file is named restaurantRoute.js
 
 const app = express();
 

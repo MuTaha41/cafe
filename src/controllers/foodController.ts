@@ -23,25 +23,25 @@ export const getFoodData = async (req: Request, res: Response) => {
 
   // We will use a try catch block to catch any errors
   try {
-    // Get the city param from the request
+    // Get the foodType param from the request
     const { foodType } = req.params;
     console.log(foodType);
 
-    // We will create a variable with a type of WeatherData
+    // We will create a variable with a type of FoodData
     let finalFoodData: FoodData;
 
-    // We will use an if statement to check which city was passed in
+    // We will use an if statement to check which food was passed in
     if (foodType === "Pizza") {
       console.log(generatePizzaFoodData());
       finalFoodData = generatePizzaFoodData();
     } else if (foodType === "Suzzi") {
       finalFoodData = generateSuzziFoodData();
     } else {
-      // If the city is not london or dublin, we will throw an error
+      // If the food is not pizza or suzzi, we will throw an error
       res.status(404).send("${foodType} not found");
     }
 
-    // We will return the weather data as JSON
+    // We will return the food data as JSON
     res.status(200).json(finalFoodData);
   } catch (error) {
     // If there is an error, we will log it and send a 500 status code

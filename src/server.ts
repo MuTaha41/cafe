@@ -1,5 +1,5 @@
 import express from "express";
-import pizzaRoute from "./routes/pizzaRoute.js"; // Updated import
+import pizzaRoute from "./routes/foodRoute.js"; // Updated import
 import cors from "cors";
 
 // We will create an express app

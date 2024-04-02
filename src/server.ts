@@ -1,5 +1,5 @@
 import express from "express";
-import pizzaRoute from "./routes/foodRoute.js"; // Updated import
+import foodRoute from "./routes/foodRoute.js";
 import cors from "cors";
 
 // We will create an express app
@@ -11,8 +11,8 @@ const PORT = 3000;
 app.use(express.json());
 app.use(cors());
 
-// We define our first route, updated to handle pizza data
-app.use("/api/pizza", pizzaRoute); // Updated route
+// We define our first route
+app.use("/api/food", foodRoute);
 
 // Start the express server
 app.listen(PORT, () => {

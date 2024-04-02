@@ -4,7 +4,6 @@ import {
   generateSuzziFoodData,
 } from "../services/foodService.js";
 import { validationResult } from "express-validator";
-import { FoodData } from "../types/global.";
 
 /**
  * Gets the weather data for a city

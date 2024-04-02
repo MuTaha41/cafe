@@ -22,6 +22,6 @@ export const storeFoodData = async (data: FoodData): Promise<void> => {
 
         console.log("Transaction ID:", sendTxn.txId);
     } catch (error) {
-    console.error("Failed to store weather data:", error);
+    console.error("Failed to store foodType data:", error);
  }
 };

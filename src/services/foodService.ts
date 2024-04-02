@@ -1,29 +1,27 @@
 import { faker } from "@faker-js/faker";
 
 export const generatePizzaFoodData = (): FoodData => {
-  // Generate random weather data
-  const generatedFoodData = {
-    city: "Pizza",
-    temperature: faker.number.int({ min: -15, max: 30 }),
-    humidity: faker.number.int({ min: 79, max: 86 }),
-    wind: faker.number.int({ min: 2, max: 78 }),
-    rain: faker.number.int({ min: 65, max: 75 }),
+  // Generate random pizza data
+  const generatedFoodData: FoodData = {
+    type: "Pizza",
+    size: faker.helpers.arrayElement(["small", "medium", "large"]),
+    toppings: faker.helpers.arrayElements(["cheese", "pepperoni", "mushrooms", "onions", "olives"], faker.datatype.number({ min: 1, max: 5 })),
+    price: faker.commerce.price(5, 20, 2, "$"),
   };
 
-  // Return weather data
+  // Return pizza data
   return generatedFoodData;
 };
 
 export const generateSuzziFoodData = (): FoodData => {
-  // Generate random weather data
+  // Generate random suzzi (assuming it's a type of food) data
   const generatedFoodData: FoodData = {
-    city: "Suzzi",
-    temperature: faker.number.int({ min: -15, max: 30 }),
-    humidity: faker.number.int({ min: 79, max: 86 }),
-    wind: faker.number.int({ min: 2, max: 78 }),
-    rain: faker.number.int({ min: 65, max: 75 }),
+    type: "Suzzi",
+    size: faker.helpers.arrayElement(["small", "medium", "large"]),
+    toppings: faker.helpers.arrayElements(["tomatoes", "lettuce", "cheese", "meat", "cucumbers"], faker.datatype.number({ min: 1, max: 5 })),
+    price: faker.commerce.price(10, 30, 2, "$"),
   };
 
-  // Return weather data
+  // Return suzzi data
   return generatedFoodData;
 };

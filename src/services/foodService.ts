@@ -4,6 +4,18 @@ import { faker } from "@faker-js/faker";
 // Assuming PizzaData is defined elsewhere in your project
 import { PizzaData } from './path_to_your_PizzaData_definition'; // Adjust the path as necessary
 
+// In your foodService.js file
+
+export function generateSushiData() {
+  // Example implementation
+  return {
+      sushiName: "Salmon Nigiri",
+      ingredients: ["Salmon", "Rice", "Wasabi"],
+      isVegetarian: false,
+  };
+}
+
+
 export const generatePizzaData = (): PizzaData => {
   const generatedPizzaData: PizzaData = {
     type: faker.helpers.arrayElement(["Margherita", "Pepperoni", "Hawaiian", "Veggie"]),
@@ -13,6 +25,7 @@ export const generatePizzaData = (): PizzaData => {
     ], faker.datatype.number({ min: 1, max: 5 })),
     price: faker.commerce.price(5, 20, 2, "$")
   };
+  
 
   return generatedPizzaData;
 };

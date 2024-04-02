@@ -2,8 +2,12 @@ import { Request, Response } from "express";
 import {
   generatePizzaData,
   generateSushiData,
+  
 } from "../services/foodService.js"; // This should be your new service file
 import { validationResult } from "express-validator";
+
+import { FoodData } from '../types/types.js';
+
 
 /**
  * Gets the food data for a type

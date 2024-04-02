@@ -1,33 +1,19 @@
-// Import the necessary modules
-import { Router } from 'express';
-import { param } from 'express-validator';
-// Assuming getRestaurantData is in the same directory
-import { getRestaurantData } from './restaurantController.js'; 
-
-// Create a new router instance
-const router = Router();
+import { param } from "express-validator";
 
 /**
- * Validates the restaurant ID param
+ * Validates the pizza type param
+ * @returns {ValidationChain} - Express validator validation chain
+ * @example
+ * router.get(
+ *  "/:pizzaType",
+ * validatePizzaType,
+ * getFoodData
+ * );
  */
-export const validateRestaurantId = param('restaurantId')
-  .isNumeric()
-  .withMessage('Restaurant ID must be a numeric value');
-
-/**
- * Validates the restaurant name param
- */
-export const validateRestaurantName = param('restaurantName')
+export const validatePizzaType = param("pizzaType")
+  // We will use the isString method to check if the pizzaType param is a string
   .isString()
-  .trim()
-  .not().isEmpty()
-  .withMessage('Restaurant name must be provided and cannot be empty');
-
-// Define routes using the validation middleware and the controller function
-router.get('/:restaurantId', validateRestaurantId, getRestaurantData);
-router.get('/:restaurantName', validateRestaurantName, getRestaurantData);
-
-// Export the router
-export default router;
-
-  
+  // We will use the isIn method to check if the pizzaType param is within our defined types
+  .isIn(["margherita", "pepperoni", "hawaiian", "veggie"])
+  // We will use the withMessage method to set a custom error message
+  .withMessage("Pizza type must be one of margherita, pepperoni, hawaiian, or veggie");

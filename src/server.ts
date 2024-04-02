@@ -1,17 +1,20 @@
-import express from 'express';
-import restaurantRouter from './routes/restaurantRoute.js';
-//import cors from "cors";
-//import restaurantRouter from './routes/restaurantRoute'; // Assuming this file is named restaurantRoute.js
+import express from "express";
+import pizzaRoute from "./routes/pizzaRoute.js"; // Updated import
+import cors from "cors";
 
+// We will create an express app
 const app = express();
 
-// Middleware that parses incoming requests with JSON payloads
+// The port that the express server will listen on
+const PORT = 3000;
+
 app.use(express.json());
+app.use(cors());
 
-// Use the restaurantRouter for all requests to '/api/restaurants'
-app.use('/api/restaurants', restaurantRouter);
+// We define our first route, updated to handle pizza data
+app.use("/api/pizza", pizzaRoute); // Updated route
 
-const PORT = process.env.PORT || 3000;
+// Start the express server
 app.listen(PORT, () => {
   console.log(`Server is listening on port ${PORT}`);
 });

@@ -1,21 +1,5 @@
-// interface PizzaData {
-//   type: string;
-//   size: string;
-//   toppings: string[];
-//   price: string;
-// }
-
 import { faker } from "@faker-js/faker";
 
-// Define the PizzaData interface
-interface PizzaData {
-  type: string;        // e.g., "Margherita", "Pepperoni"
-  size: string;        // e.g., "small", "medium", "large"
-  toppings: string[];  // e.g., ["mushrooms", "onions"]
-  price: string;       // e.g., "$9.99"
-}
-
-// Function to generate random pizza data
 export const generatePizzaData = (): PizzaData => {
   // Generate random pizza data
   const generatedPizzaData: PizzaData = {
@@ -32,3 +16,4 @@ export const generatePizzaData = (): PizzaData => {
   return generatedPizzaData;
 };
 
+// If you need another type of food data generation function, you can create one in a similar manner.

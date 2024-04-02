@@ -6,7 +6,7 @@ import {
 import { validationResult } from "express-validator";
 
 /**
- * Gets the weather data for a city
+ * Gets the food data for a specified food type
  * @param req the request object
  * @param res the response object
  */
@@ -24,27 +24,27 @@ export const getFoodData = async (req: Request, res: Response) => {
   // We will use a try catch block to catch any errors
   try {
     // Get the city param from the request
-    const { city } = req.params;
-    console.log(city);
+    const { foodType } = req.params;
+    console.log(foodType);
 
     // We will create a variable with a type of WeatherData
     let finalFoodData: FoodData;
 
     // We will use an if statement to check which city was passed in
-    if (city === "Pizza") {
+    if (foodType === "Pizza") {
       console.log(generatePizzaFoodData());
       finalFoodData = generatePizzaFoodData();
-    } else if (city === "Suzzi") {
+    } else if (foodType === "Suzzi") {
       finalFoodData = generateSuzziFoodData();
     } else {
       // If the city is not london or dublin, we will throw an error
-      res.status(404).send("Suzzi not found");
+      res.status(404).send("${foodType} not found");
     }
 
     // We will return the weather data as JSON
     res.status(200).json(finalFoodData);
   } catch (error) {
     // If there is an error, we will log it and send a 500 status code
-    res.status(500).send("Error in fetching weather data");
+    res.status(500).send("Error in fetching food data");
   }
 };

@@ -1,19 +1,19 @@
 import { param } from "express-validator";
 
 /**
- * Validates the city name param
+ * Validates the foodType name param
  * @returns {ValidationChain} - Express validator validation chain
  * @example
  * router.get(
- *  "/:city",
- * validateCityName,
- * getWeatherData
+ *  "/:foodType",
+ * validateFoodTypeName,
+ * getFoodData
  * );
  */
 export const validateFoodName = param("foodType")
-  // We will use the isString method to check if the city param is a string
+  // We will use the isString method to check if the foodType param is a string
   .isString()
-  // We will use the isIn method to check if the city param is either london or dublin
-  .isIn(["pizza", "sizzi"])
+  // We will use the isIn method to check if the foodType param is either pizza or suzzi
+  .isIn(["pizza", "suzzi"])
   // We will use the withMessage method to set a custom error message
-  .withMessage("City name must be either pizza or sizzi");
+  .withMessage("foodType name must be either pizza or suzzi");

@@ -1,7 +1,6 @@
 import express from "express";
 import foodRoute from "./routes/foodRoute.js";
 import cors from "cors";
-
 // We will create an express app
 const app = express();
 

@@ -25,3 +25,7 @@ export const generateSuzziFoodData = (): FoodData => {
   // Return suzzi data
   return generatedFoodData;
 };
+
+
+
+

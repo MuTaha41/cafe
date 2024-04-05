@@ -10,7 +10,8 @@ import { param } from "express-validator";
  * getFoodData
  * );
  */
-export const validateFoodName = param("foodType")
+
+export const validatefoodTypeName = param("foodType")
   // We will use the isString method to check if the foodType param is a string
   .isString()
   // We will use the isIn method to check if the foodType param is either pizza or suzzi

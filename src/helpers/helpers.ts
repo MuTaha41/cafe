@@ -5,7 +5,7 @@ export const storeFoodData = async (data: FoodData): Promise<void> => {
     try {
         const client = getClient();
         const account = getAccount();
-         const suggestedParams = await client.getTransactionParams().do();
+        const suggestedParams = await client.getTransactionParams().do();
 
         const note = algosdk.encodeObj(data);
 

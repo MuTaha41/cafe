@@ -3,5 +3,6 @@ interface FoodData {
   size: string;
   toppings: string[];
   price: string;
+  calories: number;
 }
 

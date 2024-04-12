@@ -1,5 +1,5 @@
 interface FoodData {
-  type: string;
+  foodType: string;
   size: string;
   toppings: string[];
   price: string;

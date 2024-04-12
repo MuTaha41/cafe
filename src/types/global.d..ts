@@ -4,5 +4,5 @@ interface FoodData {
   toppings: string[];
   price: string;
   calories: number;
+  category: 'Vegetarian' | 'Vegan' | 'Seafood' | 'Regular';
 }
-

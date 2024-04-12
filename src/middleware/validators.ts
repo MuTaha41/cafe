@@ -19,9 +19,3 @@ export const validatefoodTypeName = param("foodType")
   // We will use the withMessage method to set a custom error message
   .withMessage("foodType name must be either pizza or suzzi");
 
-// import { param } from "express-validator";
-
-// export const validateFoodName = param("foodType")
-//   .isString()
-//   .custom((value) => ["pizza", "suzzi"].includes(value.toLowerCase()))
-//   .withMessage("Food type must be either pizza or suzzi");

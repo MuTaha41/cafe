@@ -33,14 +33,14 @@ import { storeFoodData } from "../helpers/helpers.js";
 
 type Category = 'Vegetarian' | 'Vegan' | 'Seafood' | 'Regular';
 
-interface FoodData {
-  foodType: string;
-  size: string;
-  toppings: string[];
-  price: string;
-  calories: number;
-  category: Category;
-}
+// interface FoodData {
+//   foodType: string;
+//   size: string;
+//   toppings: string[];
+//   price: string;
+//   calories: number;
+//   category: Category;
+// }
 
 const validCategories: Category[] = ['Vegetarian', 'Vegan', 'Seafood', 'Regular'];
 

@@ -19,7 +19,7 @@ export const getFoodData = async (req: Request, res: Response) => {
     };
 
     if (foodType in foodCategoryMap) {
-      finalFoodData = generateFoodData(foodType, foodCategoryMap[foodType]);
+      finalFoodData = await generateFoodData(foodType, foodCategoryMap[foodType]);
     } else {
       res.status(404).send("foodType not found");
       return;

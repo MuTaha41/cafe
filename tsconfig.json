@@ -1,30 +1,3 @@
-// {
-//   "compilerOptions": {
-//     "target": "es2022",
-//     "module": "node16",
-//     "lib": ["ES2022"],
-//     "strict": true,
-//     "esModuleInterop": true,
-//     "moduleResolution": "node16",
-//     "rootDir": ".",
-//     "outDir": "dist",
-//     "allowSyntheticDefaultImports": true,
-//     "importHelpers": true,
-//     "alwaysStrict": true,
-//     "sourceMap": true,
-//     "forceConsistentCasingInFileNames": true,
-//     "noFallthroughCasesInSwitch": true,
-//     "noImplicitReturns": true,
-//     "noUnusedLocals": true,
-//     "noUnusedParameters": true,
-//     "noImplicitAny": false,
-//     "noImplicitThis": false,
-//     "strictNullChecks": false,
-//     "skipLibCheck": true,
-//     "typeRoots": ["./node_modules/@types", "./src/types"]
-//   },
-//   "include": ["src/**/*"]
-// }
 {
   "compilerOptions": {
     "target": "es2022",
@@ -48,8 +21,37 @@
     "noImplicitThis": false,
     "strictNullChecks": false,
     "skipLibCheck": true,
-    "typeRoots": ["./node_modules/@types", "./src/types", "./path_to_global_d_ts_if_different"]
+    "typeRoots": ["./node_modules/@types", "./src/types"]
   },
-  "include": ["src/**/*", "path_to_global_d_ts_if_outside_src/**/*"]
+  "include": ["src/**/*"]
+
+  
 }
+// {
+//   "compilerOptions": {
+//     "target": "es2022",
+//     "module": "node16",
+//     "lib": ["ES2022"],
+//     "strict": true,
+//     "esModuleInterop": true,
+//     "moduleResolution": "node16",
+//     "rootDir": ".",
+//     "outDir": "dist",
+//     "allowSyntheticDefaultImports": true,
+//     "importHelpers": true,
+//     "alwaysStrict": true,
+//     "sourceMap": true,
+//     "forceConsistentCasingInFileNames": true,
+//     "noFallthroughCasesInSwitch": true,
+//     "noImplicitReturns": true,
+//     "noUnusedLocals": true,
+//     "noUnusedParameters": true,
+//     "noImplicitAny": false,
+//     "noImplicitThis": false,
+//     "strictNullChecks": false,
+//     "skipLibCheck": true,
+//     "typeRoots": ["./node_modules/@types", "./src/types", "./path_to_global_d_ts_if_different"]
+//   },
+//   "include": ["src/**/*", "path_to_global_d_ts_if_outside_src/**/*"]
+// }
 

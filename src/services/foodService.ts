@@ -3,7 +3,6 @@ import { storeFoodData } from "../helpers/helpers.js";
 
 type Category = 'Vegetarian' | 'Vegan' | 'Seafood' | 'Regular';
 
-
 const validCategories: Category[] = ['Vegetarian', 'Vegan', 'Seafood', 'Regular'];
 
 export const generateFoodData = async (type: string, category: Category): Promise<FoodData> => {

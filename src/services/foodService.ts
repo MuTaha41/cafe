@@ -18,7 +18,7 @@ export const generateFoodData = async (type: string, category: Category): Promis
   };
 
   const generatedFoodData: FoodData = {
-    foodType: type,
+    type: type,
     size: faker.helpers.arrayElement(["small", "medium", "large"]),
     toppings: faker.helpers.arrayElements(baseToppings[category], faker.number.int({ min: 1, max: 5 })),
     price: faker.commerce.price({ min: 5, max: 30, dec: 2, symbol: "$" }),

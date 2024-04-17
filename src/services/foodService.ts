@@ -50,7 +50,7 @@ export const generateFoodData = (type: string, category: string): FoodData => {
   // Generate random food data
   const generatedFoodData: FoodData = {
     type: type,
-    size: faker.helpers.arrayElement(["small", "medium", "large"]),
+    size: faker.helpers.arrayElement(["medium", "large", "small"]),
     toppings: faker.helpers.arrayElements(baseToppings[category], faker.datatype.number({ min: 1, max: 5 })),
     price: faker.commerce.price(5, 30, 2, "$"),
     calories: faker.datatype.number({ min: 250, max: 1200 }),

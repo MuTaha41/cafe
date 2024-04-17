@@ -32,7 +32,7 @@ app.use(cors());
 app.use("/api/food", foodRoute);
 
 // Error handling middleware should be the last piece of middleware added to the app
-app.use((err, req, res, next) => {
+app.use((err, _req, res, next) => {
   if (!err) return next(); // if there is no error, continue to the next middleware
   // Handle the error and send a response
   res.status(err.status || 500).json({

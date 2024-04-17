@@ -48,20 +48,38 @@ export const getFoodData = async (req: Request, res: Response) => {
   const { foodType } = req.params;
   const foodCategoryMap = {
     pizza: 'Regular', // Assume 'Regular' for pizzas
-    suzzi: 'Vegan'    // Assume 'Vegan' for suzzis
+    suzzi: 'Vegan',    // Assume 'Vegan' for suzzis
+    burger: 'Regular',  // Assume 'Regular' for burgers
+    salad: 'Vegan'      // Assume 'Vegan' for salads; can also be 'Vegetarian'
   };
 
   try {
-    if (!foodCategoryMap[foodType]) {
+    const category = foodCategoryMap[foodType];
+    if (!category) {
+      console.error("Food type not found:", foodType);
       res.status(404).send("Food type not found: " + foodType);
       return;
     }
 
-    const finalFoodData: FoodData = await generateFoodData(foodType, foodCategoryMap[foodType]);
+    const finalFoodData: FoodData = await generateFoodData(foodType, category);
     res.status(200).json(finalFoodData);
   } catch (error) {
     console.error("Error in fetching food data for", foodType, ":", error);
     res.status(500).send("Error in fetching food data");
   }
 };
+
+  // try {
+  //   if (!foodCategoryMap[foodType]) {
+  //     res.status(404).send("Food type not found: " + foodType);
+  //     return;
+  //   }
+
+//     const finalFoodData: FoodData = await generateFoodData(foodType, foodCategoryMap[foodType]);
+//     res.status(200).json(finalFoodData);
+//   } catch (error) {
+//     console.error("Error in fetching food data for", foodType, ":", error);
+//     res.status(500).send("Error in fetching food data");
+//   }
+// };
 

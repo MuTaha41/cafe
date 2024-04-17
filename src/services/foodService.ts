@@ -1,20 +1,53 @@
+// import { faker } from "@faker-js/faker";
+// import { storeFoodData } from "../helpers/helpers.js";
+
+// const validCategories = ['Vegetarian', 'Vegan', 'Seafood', 'Regular'];
+
+// export const generateFoodData = (type: string, category: string): FoodData => {
+//   if (!validCategories.includes(category)) {
+//     throw new Error(`Invalid category: ${category}. Must be one of ${validCategories.join(", ")}`);
+//   }
+
+//   const baseToppings = {
+//     Vegetarian: ["bell peppers", "spinach", "mushrooms", "olives", "tomatoes"],
+//     Vegan: ["tomatoes", "lettuce", "cucumbers", "bell peppers", "chickpeas"],
+//     Seafood: ["shrimp", "tuna", "salmon", "squid", "anchovies"],
+//     Regular: ["cheese", "pepperoni", "ham", "bacon", "sausage"]
+//   };
+
+//   const generatedFoodData: FoodData = {
+//     type: type,
+//     size: faker.helpers.arrayElement(["small", "medium", "large"]),
+//     toppings: faker.helpers.arrayElements(baseToppings[category], faker.datatype.number({ min: 1, max: 5 })),
+//     price: faker.commerce.price(5, 30, 2, "$"),
+//     calories: faker.datatype.number({ min: 250, max: 1200 }),
+//     category: category as 'Vegetarian' | 'Vegan' | 'Seafood' | 'Regular'
+//   };
+
+//   storeFoodData(generatedFoodData).catch(console.error);
+//   return generatedFoodData;
+// };
+
 import { faker } from "@faker-js/faker";
 import { storeFoodData } from "../helpers/helpers.js";
+//import { FoodData } from "../types"; // Assuming you have a type definition file for TypeScript
 
 const validCategories = ['Vegetarian', 'Vegan', 'Seafood', 'Regular'];
+
+// Base toppings organized by category
+const baseToppings: Record<string, string[]> = {
+  Vegetarian: ["bell peppers", "spinach", "mushrooms", "olives", "tomatoes"],
+  Vegan: ["tomatoes", "lettuce", "cucumbers", "bell peppers", "chickpeas"],
+  Seafood: ["shrimp", "tuna", "salmon", "squid", "anchovies"],
+  Regular: ["cheese", "pepperoni", "ham", "bacon", "sausage"]
+};
 
 export const generateFoodData = (type: string, category: string): FoodData => {
   if (!validCategories.includes(category)) {
     throw new Error(`Invalid category: ${category}. Must be one of ${validCategories.join(", ")}`);
   }
 
-  const baseToppings = {
-    Vegetarian: ["bell peppers", "spinach", "mushrooms", "olives", "tomatoes"],
-    Vegan: ["tomatoes", "lettuce", "cucumbers", "bell peppers", "chickpeas"],
-    Seafood: ["shrimp", "tuna", "salmon", "squid", "anchovies"],
-    Regular: ["cheese", "pepperoni", "ham", "bacon", "sausage"]
-  };
-
+  // Generate random food data
   const generatedFoodData: FoodData = {
     type: type,
     size: faker.helpers.arrayElement(["small", "medium", "large"]),
@@ -24,9 +57,15 @@ export const generateFoodData = (type: string, category: string): FoodData => {
     category: category as 'Vegetarian' | 'Vegan' | 'Seafood' | 'Regular'
   };
 
-  storeFoodData(generatedFoodData).catch(console.error);
+  // Store the generated food data asynchronously
+  storeFoodData(generatedFoodData).catch(error => {
+    console.error("Failed to store food data:", error);
+  });
+
   return generatedFoodData;
 };
+
+
 
 // import { faker } from "@faker-js/faker";
 // import { storeFoodData } from "../helpers/helpers.js";

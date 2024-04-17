@@ -10,12 +10,16 @@ import { param } from "express-validator";
  * getFoodData
  * );
  */
+export const validateFoodTypeName = param("foodType")
+  .isString().withMessage("foodType must be a string")
+  .isIn(["pizza", "suzzi", "burger", "salad"])
+  .withMessage("foodType name must be either pizza, suzzi, burger, or salad");
 
-export const validatefoodTypeName = param("foodType")
-  // We will use the isString method to check if the foodType param is a string
-  .isString()
-  // We will use the isIn method to check if the foodType param is either pizza or suzzi
-  .isIn(["pizza", "suzzi"])
-  // We will use the withMessage method to set a custom error message
-  .withMessage("foodType name must be either pizza or suzzi");
+// export const validatefoodTypeName = param("foodType")
+//   // We will use the isString method to check if the foodType param is a string
+//   .isString()
+//   // We will use the isIn method to check if the foodType param is either pizza or suzzi
+//   .isIn(["pizza", "suzzi"])
+//   // We will use the withMessage method to set a custom error message
+//   .withMessage("foodType name must be either pizza or suzzi");
 

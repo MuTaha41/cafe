@@ -12,8 +12,8 @@ import { param } from "express-validator";
  */
 export const validateFoodTypeName = param("foodType")
   .isString().withMessage("foodType must be a string")
-  .isIn(["pizza", "suzzi", "burger", "salad"])
-  .withMessage("foodType name must be either pizza, suzzi, burger, or salad");
+  .isIn(["pizza", "sushi", "burger", "salad"])
+  .withMessage("foodType name must be either pizza, sushi, burger, or salad");
 
 // export const validatefoodTypeName = param("foodType")
 //   // We will use the isString method to check if the foodType param is a string

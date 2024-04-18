@@ -48,7 +48,7 @@ export const getFoodData = async (req: Request, res: Response) => {
   const { foodType } = req.params;
   const foodCategoryMap = {
     pizza: 'Regular', // Assume 'Regular' for pizzas
-    suzzi: 'Vegan',    // Assume 'Vegan' for suzzis
+    sushi: 'Vegan',    // Assume 'Vegan' for sushis
     burger: 'Regular',  // Assume 'Regular' for burgers
     salad: 'Vegan'      // Assume 'Vegan' for salads; can also be 'Vegetarian'
   };

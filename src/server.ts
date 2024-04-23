@@ -9,7 +9,7 @@ app.use(express.json());
 app.use(cors());
 
 // Updated the API route to reflect drinks
-app.use("/api/drinks", drinkRoute);
+app.use("/api/drink", drinkRoute);
 
 // Error handling middleware should be the last piece of middleware added to the app
 app.use((err, _req, res, next) => {

@@ -1,25 +1,5 @@
-// import express from "express";
-// import foodRoute from "./routes/foodRoute.js";
-// import cors from "cors";
-// // We will create an express app
-// const app = express();
-
-// // The port that the express server will listen on
-// const PORT = 3000;
-
-// app.use(express.json());
-// app.use(cors());
-
-// // We define our first route
-// app.use("/api/food", foodRoute);
-
-// // Start the express server
-// app.listen(PORT, () => {
-//   console.log(`Server is listening on port ${PORT}`);
-// });
-
 import express from "express";
-import foodRoute from "./routes/foodRoute.js";
+import drinkRoute from "./routes/drinkRoute.js"; // Updated import to handle drink routes
 import cors from "cors";
 
 const app = express();
@@ -28,8 +8,8 @@ const PORT = 3000;
 app.use(express.json());
 app.use(cors());
 
-// Your routes here
-app.use("/api/food", foodRoute);
+// Updated the API route to reflect drinks
+app.use("/api/drinks", drinkRoute);
 
 // Error handling middleware should be the last piece of middleware added to the app
 app.use((err, _req, res, next) => {

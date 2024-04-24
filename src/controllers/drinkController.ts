@@ -14,7 +14,7 @@ export const getDrinkData = async (req: Request, res: Response) => {
   const drinkCategoryMap = {
     coffee: 'Coffee', // Assume 'Coffee' for coffee drinks
     tea: 'Tea',       // Assume 'Tea' for tea drinks
-    smoothie: 'Smoothie', // Assume 'Smoothie' for smoothies
+    chocolate: 'Chocolate', // Assume 'Chocolate' for chocolate
     soda: 'Soda'      // Assume 'Soda' for sodas
   };
 

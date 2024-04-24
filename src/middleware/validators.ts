@@ -12,5 +12,5 @@ import { param } from "express-validator";
  */
 export const validateDrinkTypeName = param("drinkType")
   .isString().withMessage("drinkType must be a string")
-  .isIn(["coffee", "tea", "smoothie", "soda"])
-  .withMessage("drinkType name must be either coffee, tea, smoothie, or soda");
+  .isIn(["coffee", "tea", "chocolate", "soda"])
+  .withMessage("drinkType name must be either coffee, tea, chocolate, or soda");

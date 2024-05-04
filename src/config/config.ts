@@ -4,7 +4,7 @@ const algodToken = "a".repeat(64);
 const server: string = "http://localhost";
 const port: string = "4001";
 
-const mnemonic: string = "merge thing later ankle vibrant fiber sausage humor oven february mutual clarify crazy giggle huge lunar betray area response stamp need flip broken ability shove";
+const mnemonic: string = "capable shrug agree hungry dish inside material pluck father buffalo swarm beauty verb dignity imitate banana detect put celery radio assault result onion able october";
 // "canoe mule cart impulse debris bachelor pelican case rocket apart donkey blanket loan grief upper lake pyramid turtle amused amateur alcohol safe armor abandon lumber";
 
 export function getClient(): algosdk.Algodv2 {
